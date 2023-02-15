@@ -14,7 +14,9 @@ class Link(models.Model):
 
 class Movie(models.Model):
     premium = models.BooleanField(default=False)
-    movieName = models.CharField(max_length=25)
+    movieName = models.CharField(max_length=50)
+    popular = models.BooleanField(default=False)
+    year = models.CharField(max_length=10)
     desc = models.TextField(blank=True, null=True)
     img = models.CharField(max_length=100)
     downloadLink = models.ManyToManyField(Link, blank=True)
