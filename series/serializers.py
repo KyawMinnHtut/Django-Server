@@ -5,5 +5,5 @@ class SeriesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Series
         exclude = ['id']
-        depth = 1
+        depth = 2
     
