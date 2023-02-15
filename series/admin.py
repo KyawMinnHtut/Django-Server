@@ -11,7 +11,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Series)
 class SeriesAdmin(admin.ModelAdmin):
-    list_display = ("sname", )
+    list_display = ("sname", "category", "premium")
     search_fields = ("sname__startswith",)
 
 @admin.register(Part)
