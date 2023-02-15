@@ -11,16 +11,16 @@ class LiveLinks(models.Model):
 
 class Live(models.Model):
     premium = models.BooleanField(default=False)
-    league = models.CharField(max_length=50, null=True)
+    league = models.CharField(max_length=100, null=True)
     date = models.DateField(blank=True)
     time = models.TimeField(blank=True)
-    status = models.CharField(max_length=10, null=True)
+    status = models.BooleanField(default=False)
     himg = models.CharField(max_length=100, null=True)
     aimg = models.CharField(max_length=100, null=True)
     teams = models.CharField(max_length=50, null=True)
     hteam = models.CharField(max_length=50, null=True)
     ateam = models.CharField(max_length=50, null=True)
-    hotmat = models.CharField(max_length=5, null=True)
+    hotmat = models.BooleanField(default=False)
     link = models.ManyToManyField(LiveLinks, blank=True)
     def __str__(self):
         return self.teams
