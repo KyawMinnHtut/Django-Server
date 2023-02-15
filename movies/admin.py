@@ -17,4 +17,5 @@ class LinkAdmin(admin.ModelAdmin):
 class MovieAdmin(admin.ModelAdmin):
     list_display = ("movieName", "category", "premium")
     search_fields = ("movieName__startswith",)
+    list_filter = ("category","premium")
     # list_filter = ("premium",)
