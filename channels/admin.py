@@ -10,5 +10,5 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Channels)
 class ChannelsAdmin(admin.ModelAdmin):
-    list_display = ("title", "category", "link")
+    list_display = ("title", "img", "link")
     search_fields = ("title__startswith",)
