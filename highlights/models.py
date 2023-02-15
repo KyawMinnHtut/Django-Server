@@ -12,7 +12,7 @@ class HighLightLink(models.Model):
 
 class HighLight(models.Model):
     premium = models.BooleanField(default=False)
-    league = models.CharField(max_length=50, null=True)
+    league = models.CharField(max_length=100, null=True)
     date = models.DateField(blank=True)
     result = models.CharField(max_length=50, null=True)
     himg = models.CharField(max_length=100, null=True)
