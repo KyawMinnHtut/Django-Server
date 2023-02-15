@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Ads(models.Model):
-    img = models.CharField(max_length=100)
+    img = models.CharField(max_length=255)
     link = models.CharField(max_length=255)
     messenger = models.CharField(max_length=10)
 
@@ -10,7 +10,7 @@ class Ads(models.Model):
         return self.link
     
 class ImageAds(models.Model):
-    img = models.CharField(max_length=100)
+    img = models.CharField(max_length=255)
     link = models.CharField(max_length=255)
     messenger = models.CharField(max_length=10)
 
@@ -18,7 +18,7 @@ class ImageAds(models.Model):
         return self.link 
 
 class TextAds(models.Model):
-    text = models.CharField(max_length=100)
+    text = models.CharField(max_length=255)
     show = models.BooleanField()
     link = models.CharField(max_length=255)
     messenger = models.CharField(max_length=10)
