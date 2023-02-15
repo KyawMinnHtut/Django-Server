@@ -24,6 +24,8 @@ class Category(models.Model):
 class Series(models.Model):
     premium = models.BooleanField(default=False)
     sname = models.CharField(max_length=50, null=True)
+    popular = models.BooleanField(default=False)
+    year = models.CharField(max_length=10)
     img = models.CharField(max_length=100, null=True)
     desc = models.TextField(blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
