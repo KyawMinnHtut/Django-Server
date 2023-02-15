@@ -13,6 +13,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class SeriesAdmin(admin.ModelAdmin):
     list_display = ("sname", "category", "premium")
     search_fields = ("sname__startswith",)
+    list_filter = ("category","premium")
 
 @admin.register(Part)
 class PartAdmin(admin.ModelAdmin):
