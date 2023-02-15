@@ -15,12 +15,18 @@ class Part(models.Model):
     playLink = models.ManyToManyField(Link, blank=True)
     def __str__(self):
         return self.part
+        
+class Category(models.Model):
+    category = models.CharField(max_length=30)
+    def __str__(self):
+        return self.category
 
 class Series(models.Model):
     premium = models.BooleanField(default=False)
     sname = models.CharField(max_length=50, null=True)
     img = models.CharField(max_length=100, null=True)
     desc = models.TextField(blank=True, null=True)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     link = models.ManyToManyField(Part)
     def __str__(self):
         return self.sname
