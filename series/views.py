@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from .models import Series
+from .models import Series, Category
 from .serializers import SeriesSerializer, CategorySerializer
 
 
