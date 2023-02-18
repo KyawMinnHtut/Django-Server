@@ -18,11 +18,12 @@ class Link(models.Model):
 
 class Part(models.Model):
     # live = models.ForeignKey(Live, on_delete=models.SET_NULL, blank=True, null=True)
+    sname = models.CharField(max_length=50, null=True, blank=True)
     part = models.CharField(max_length=5, null=True)
     # downloadLink = models.CharField(max_length=15, null=True)
     playLink = models.ManyToManyField(Link, blank=True)
     def __str__(self):
-        return self.part
+        return self.sname + " ( Part "+self.part+" )"
         
 class Category(models.Model):
     category = models.CharField(max_length=30)
@@ -33,10 +34,10 @@ class Series(models.Model):
     premium = models.BooleanField(default=False)
     sname = models.CharField(max_length=50, null=True)
     popular = models.BooleanField(default=False)
-    year = models.CharField(max_length=10)
-    img = models.CharField(max_length=100, null=True)
+    year = models.CharField(max_length=10, blank=True)
+    img = models.CharField(max_length=100, null=True, blank=True)
     desc = models.TextField(blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
-    link = models.ManyToManyField(Part)
+    link = models.ManyToManyField(Part, blank=True)
     def __str__(self):
         return self.sname
