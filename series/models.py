@@ -2,11 +2,19 @@ from django.db import models
 
 
 # Create your models here.
+
+QUALITY = (
+    ("SD", "SD"),
+    ("HD", "HD"),
+    ("FHD", "FHD"),
+)
+
 class Link(models.Model):
     name = models.CharField(max_length=25)
+    quality = models.CharField(max_length=5, choices = QUALITY, default="SD")
     link = models.CharField(max_length=255)
     def __str__(self):
-        return self.name
+        return self.name + "  (" +self.quality +")"
 
 class Part(models.Model):
     # live = models.ForeignKey(Live, on_delete=models.SET_NULL, blank=True, null=True)
