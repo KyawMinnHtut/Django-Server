@@ -1,6 +1,13 @@
 from django.db import models
 
 # Create your models here.
+
+QUALITY = (
+    ("SD", "SD"),
+    ("HD", "HD"),
+    ("FHD", "FHD"),
+)
+
 class Category(models.Model):
     category = models.CharField(max_length=30)
     def __str__(self):
@@ -8,9 +15,10 @@ class Category(models.Model):
     
 class Link(models.Model):
     name = models.CharField(max_length=25)
+    quality = models.CharField(max_length=5, choices = QUALITY, default="SD")
     link = models.CharField(max_length=255)
     def __str__(self):
-        return self.name
+        return self.name + " " +self.quality
 
 class Movie(models.Model):
     premium = models.BooleanField(default=False)
