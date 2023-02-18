@@ -9,7 +9,7 @@ class AdsAdmin(admin.ModelAdmin):
 
 @admin.register(ImageAds)
 class ImageAdsAdmin(admin.ModelAdmin):
-    list_display = ("img", "link", "messenger")
+    list_display = ("img", "link", "messenger", "screen")
 
 @admin.register(TextAds)
 class TextAdsAdmin(admin.ModelAdmin):
