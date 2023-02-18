@@ -11,7 +11,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Link)
 class LinkAdmin(admin.ModelAdmin):
-    list_display = ("name",)
+    list_display = ("name", "quality"),
+    search_fields = ("name__startswith", )
+    list_filter = ("quality",)
 
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
