@@ -7,6 +7,6 @@ router = routers.DefaultRouter()
 router.register(r'', views.CustomUserViewSet)
 
 urlpatterns = [
-    path(r'^authenticate/', CustomObtainAuthToken.as_view()),
+#    path(r'^authenticate/', CustomObtainAuthToken.as_view()),
     path('', include(router.urls))
 ]
