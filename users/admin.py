@@ -6,7 +6,7 @@ from .models import CustomUser
 @admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
     list_display = (
-        'username', 'premium_date'
+        'username', 'date_joined', 'premium_date'
     )
     fieldsets = (
         (None, {
@@ -15,18 +15,9 @@ class CustomUserAdmin(UserAdmin):
         ('Personal info', {
             'fields': ('first_name', 'last_name', 'email')
         }),
-        ('Permissions', {
-            'fields': (
-                'is_active', 'is_staff', 'is_superuser',
-                'groups', 'user_permissions'
-                )
-        }),
         ('Important dates', {
-            'fields': ('last_login', 'date_joined')
+            'fields': ('last_login', 'date_joined', 'premium_date')
         }),
-        ('Additional info', {
-            'fields': ('premium_date',)
-        })
     )
 
     add_fieldsets = (
@@ -36,16 +27,7 @@ class CustomUserAdmin(UserAdmin):
         ('Personal info', {
             'fields': ('first_name', 'last_name', 'email')
         }),
-        ('Permissions', {
-            'fields': (
-                'is_active', 'is_staff', 'is_superuser',
-                'groups', 'user_permissions'
-                )
-        }),
         ('Important dates', {
-            'fields': ('last_login', 'date_joined')
+            'fields': ('last_login', 'date_joined', 'premium_date')
         }),
-        ('Additional info', {
-            'fields': ('premium_date',)
-        })
     )
