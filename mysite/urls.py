@@ -22,7 +22,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework.authtoken.views import obtain_auth_token
+#from rest_framework.authtoken.views import obtain_auth_token
 from myapp import urls as myapp_urls
 from highlights import urls as highlight_urls
 from channels import urls as channel_urls
@@ -31,11 +31,12 @@ from movies import urls as movie_urls
 from series import urls as seires_urls
 from ads import urls as ads_urls
 from users import urls as users_urls
+from users.views import CustomAuthToken
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
-    path('api-token-auth/', obtain_auth_token),
+    #path('api-auth/', include('rest_framework.urls')),
+    path('api-token-auth/', CustomAuthToken.as_view()),
     path('api/live/', include(myapp_urls)),
     path('api/highlight/', include(highlight_urls)),
     path('api/channel/', include(channel_urls)),
