@@ -1,6 +1,6 @@
 from django.http import Http404
 from .models import CustomUser
-#from .serializers import CustomUserSerializer, CreateUserSerializer
+from .serializers import CustomUserSerializer, CreateUserSerializer
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework.views import APIView
