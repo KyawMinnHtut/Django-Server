@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-#from django.utils.timezone import now
+from django.utils.timezone import now
 #from .manager import CustomUserManager
 
 # Create your models here.
