@@ -8,6 +8,6 @@ from . import views
 
 urlpatterns = [
 #    path(r'^authenticate/', CustomObtainAuthToken.as_view()),
-    path('user/', views.CreateUser.as_view()),
-    path('user/<int:pk>/', views.UserDetail.as_view()),
+    path('', views.CreateUser.as_view()),
+    path('<int:pk>/', views.UserDetail.as_view()),
 ]
