@@ -13,7 +13,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class LinkAdmin(admin.ModelAdmin):
     list_display = ("name",),
     search_fields = ("name__startswith", )
-    list_filter = ("quality",)
+    #list_filter = ("quality",)
 
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
