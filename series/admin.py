@@ -23,6 +23,6 @@ class PartAdmin(admin.ModelAdmin):
 
 @admin.register(Link)
 class LinkAdmin(admin.ModelAdmin):
-    list_display = ("name", "quality"),
+    list_display = ("name", ),
     search_fields = ("name__startswith", )
-    list_filter = ("quality",)
+    #list_filter = ("quality",)
