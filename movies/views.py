@@ -1,4 +1,6 @@
 from rest_framework import viewsets
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from .models import Category, Movie
 from .serializers import CategorySerializer, MovieSerializer
 from rest_framework.permissions import IsAuthenticated
@@ -14,3 +16,11 @@ class MovieViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = (IsAuthenticated,)
     queryset = Movie.objects.all().order_by('-id')
     serializer_class = MovieSerializer
+
+class FilteredMovieView(APIView):
+    permission_classes = (IsAuthenticated,)
+    @staticmethod
+    def get(request, category_id):
+        items = Movie.objects.filter(category_id=category_id).order_by('-id')
+        serializer_class = MovieSerializer(items)
+        return Response(serializer_class.data)
