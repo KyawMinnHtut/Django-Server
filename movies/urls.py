@@ -9,5 +9,5 @@ router.register(r'', views.MovieViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('/<int:category_id>/', FilteredMovieView.as_view())
+    path('categoryId/<int:category_id>/', FilteredMovieView.as_view())
 ]
