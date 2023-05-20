@@ -22,5 +22,5 @@ class FilteredMovieView(APIView):
     @staticmethod
     def get(request, category_id):
         items = Movie.objects.filter(category_id=category_id).order_by('-id')
-        serializer_class = MovieSerializer(items)
+        serializer_class = MovieSerializer(items, many=True)
         return Response(serializer_class.data)
