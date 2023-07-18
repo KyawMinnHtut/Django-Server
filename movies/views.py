@@ -9,7 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = (IsAuthenticated,)
     '''API endpoint that allows users to be viewed.'''
-    queryset = Category.objects.all().order_by('-id')
+    queryset = Category.objects.all().order_by('-id')[:50]
     serializer_class = CategorySerializer
 
 class MovieViewSet(viewsets.ReadOnlyModelViewSet):
